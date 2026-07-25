@@ -1,11 +1,9 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-
 import LoginPage from "../pages/LoginPage";
 import { Todos } from "../pages/TodoList";
 import { Notes } from "../pages/Notes";
 import { Users } from "../pages/Users";
 import Unauthorized from "../pages/Unauthorized";
-
 import ProtectedRoute from "./ProtectedRoute";
 
 export const router = createBrowserRouter([
@@ -47,13 +45,11 @@ export const router = createBrowserRouter([
 
   {
     path: "/",
-
     element: <Navigate to="/todos" replace />,
   },
 
   {
     path: "*",
-
     element: <Navigate to="/login" replace />,
   },
 ]);

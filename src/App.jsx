@@ -1,23 +1,30 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import Login from "./pages/Login";
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import LoginPage from "./pages/LoginPage";
+import Todos from "./pages/TodoList";
+import Notes from "./pages/Notes";
 import Unauthorized from "./pages/Unauthorized";
-import ProtectedRoute from "./routes/ProtectedRoute";
-import TodoPage from "./pages/TodoPage";
+import ProtectedRoute from "./routing/ProtectedRoute";
+import Users from "./pages/Users";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />} />
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/unauthorized" element={<Unauthorized />} />
 
-        <Route path="/unauthorized" element={<Unauthorized />} />
-
-        <Route element={<ProtectedRoute />}>
-          <Route path="/todos" element={<TodoPage />} />
+      <Route element={<ProtectedRoute />}>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Navigate to="/todos" replace />} />
+          <Route path="/todos" element={<Todos />} />
+          <Route path="/notes" element={<Notes />} />
+          <Route path="/users" element={<Users />} />
         </Route>
-      </Routes>
-    </BrowserRouter>
+      </Route>
+
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
   );
 }
 
