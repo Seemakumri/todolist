@@ -97,8 +97,8 @@ const LoginPage = () => {
           <Avatar
             sx={{
               bgcolor: "#1976d2",
-              width: 50, // was 62
-              height: 50, // was 62
+              width: 50, 
+              height: 50, 
               mx: "auto",
               mb: 2,
               boxShadow: "0 6px 15px rgba(25,118,210,0.4)",
@@ -107,7 +107,6 @@ const LoginPage = () => {
             <LockOutlinedIcon fontSize="medium" />
           </Avatar>
 
-          {/* Heading */}
           <Typography variant="h5" fontWeight="600" gutterBottom>
             Welcome Back
           </Typography>
@@ -116,7 +115,6 @@ const LoginPage = () => {
             Sign in to access your dashboard
           </Typography>
 
-          {/* Email */}
           <TextField
             fullWidth
             label="Email Address"
@@ -127,7 +125,6 @@ const LoginPage = () => {
             margin="dense"
           />
 
-          {/* Password */}
           <TextField
             fullWidth
             label="Password"
@@ -151,7 +148,6 @@ const LoginPage = () => {
             }}
           />
 
-          {/* Button */}
           <Button
             fullWidth
             variant="contained"
@@ -171,7 +167,6 @@ const LoginPage = () => {
         </Paper>
       </Box>
 
-      {/* Snackbar */}
       <Snackbar
         open={toast.open}
         autoHideDuration={4000}

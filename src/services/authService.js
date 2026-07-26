@@ -2,9 +2,7 @@ import axios from "axios";
 
 const BASE_URL = "http://localhost:8080";
 
-
 export const loginUser = async (email, password) => {
-
     try {
 
         const response = await axios.post(
@@ -14,16 +12,12 @@ export const loginUser = async (email, password) => {
                 password
             }
         );
-
         return response.data;
-
     } catch (error) {
-
         console.log(
             "Login Error:",
             error.response?.data
         );
-
         throw error;
     }
 };

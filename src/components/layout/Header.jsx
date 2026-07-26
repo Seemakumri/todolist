@@ -34,17 +34,17 @@ const Header = () => {
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
-const navButtonStyle = (path) => ({
-  color: "white",
-  backgroundColor:
-    location.pathname === path ? "rgba(255,255,255,0.25)" : "transparent",
-  borderRadius: 2,
-  px: 2,
-  fontWeight: location.pathname === path ? "bold" : "normal",
-  "&:hover": {
-    backgroundColor: "rgba(255,255,255,0.3)",
-  },
-});
+  const navButtonStyle = (path) => ({
+    color: "white",
+    backgroundColor:
+      location.pathname === path ? "rgba(255,255,255,0.25)" : "transparent",
+    borderRadius: 2,
+    px: 2,
+    fontWeight: location.pathname === path ? "bold" : "normal",
+    "&:hover": {
+      backgroundColor: "rgba(255,255,255,0.3)",
+    },
+  });
   return (
     <AppBar position="static">
       <Toolbar>
@@ -55,60 +55,60 @@ const navButtonStyle = (path) => ({
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           {role === "ADMIN" && (
             <>
-   <Button
-  component={NavLink}
-  to="/todos"
-  sx={navButtonStyle("/todos")}
->
-  Manage Todos
-</Button>
+              <Button
+                component={NavLink}
+                to="/todos"
+                sx={navButtonStyle("/todos")}
+              >
+                Manage Todos
+              </Button>
 
-<Button
-  component={NavLink}
-  to="/notes"
-  sx={navButtonStyle("/notes")}
->
-  Notes
-</Button>
+              <Button
+                component={NavLink}
+                to="/notes"
+                sx={navButtonStyle("/notes")}
+              >
+                Notes
+              </Button>
 
-<Button
-  component={NavLink}
-  to="/users"
-  sx={navButtonStyle("/users")}
->
-  User Management
-</Button>
+              <Button
+                component={NavLink}
+                to="/users"
+                sx={navButtonStyle("/users")}
+              >
+                User Management
+              </Button>
             </>
           )}
 
           {role === "USER" && (
-        <Button
-  component={NavLink}
-  to="/todos"
-  sx={navButtonStyle("/todos")}
->
-  My Todos
-</Button>
+            <Button
+              component={NavLink}
+              to="/todos"
+              sx={navButtonStyle("/todos")}
+            >
+              My Todos
+            </Button>
           )}
 
           <Box sx={{ ml: 2 }}>
-<Avatar
-  onClick={handleMenuOpen}
-  sx={{
-    width: 36,
-    height: 36,
-    bgcolor: "#e0e0e0",
-    color: "#616161",
-    cursor: "pointer",
-    border: "1px solid #bdbdbd",
-    transition: "0.2s",
-    "&:hover": {
-      bgcolor: "#d6d6d6",
-    },
-  }}
->
-  <FaUserCircle size={36} />
-</Avatar>
+            <Avatar
+              onClick={handleMenuOpen}
+              sx={{
+                width: 36,
+                height: 36,
+                bgcolor: "#e0e0e0",
+                color: "#616161",
+                cursor: "pointer",
+                border: "1px solid #bdbdbd",
+                transition: "0.2s",
+                "&:hover": {
+                  bgcolor: "#d6d6d6",
+                },
+              }}
+            >
+              <FaUserCircle size={36} />
+            </Avatar>
 
             <Menu
               anchorEl={anchorEl}
@@ -139,4 +139,3 @@ const navButtonStyle = (path) => ({
 };
 
 export default Header;
-

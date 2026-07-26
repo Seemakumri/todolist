@@ -207,8 +207,6 @@ export const Users = () => {
           </Table>
         </TableContainer>
       </Paper>
-
-      {/* Modal for Creating New User */}
       <Dialog open={openModal} onClose={() => setOpenModal(false)} fullWidth maxWidth="xs">
         <Box component="form" onSubmit={handleAddUser}>
           <DialogTitle>Add New User</DialogTitle>

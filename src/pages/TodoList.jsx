@@ -152,7 +152,6 @@ export const Todos = () => {
           />
         </Box>
 
-        {/* Task Creation Form */}
         <Box component="form" onSubmit={addTodo} sx={{ mb: 3 }}>
           <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5}>
             <TextField
@@ -206,7 +205,6 @@ export const Todos = () => {
 
         <Divider sx={{ my: 3 }} />
 
-        {/* Search and Status Filters */}
         <Stack direction={{ xs: "column", sm: "row" }} spacing={2} mb={3}>
           <TextField
             placeholder="Search tasks..."
@@ -247,7 +245,6 @@ export const Todos = () => {
           </TextField>
         </Stack>
 
-        {/* Task List */}
         <List sx={{ p: 0 }}>
           {visibleTodos.length > 0 ? (
             visibleTodos.map((todo) => (
